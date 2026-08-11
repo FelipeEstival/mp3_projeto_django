@@ -133,6 +133,30 @@
         footer {
             color: var(--color-5) !important;
         }
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -143,10 +167,10 @@
                 <i class="fa-solid fa-music me-2"></i>Baixador de MP3
             </span>
             <div class="d-flex align-items-center">
-                <a class="text-white social-btn" href="https://github.com/SEU_USUARIO" target="_blank" title="GitHub">
+                <a class="text-white social-btn" href="https://github.com/FelipeEstival" target="_blank" title="GitHub">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <a class="text-white social-btn" href="https://linkedin.com/in/SEU_PERFIL" target="_blank" title="LinkedIn">
+                <a class="text-white social-btn" href="https://www.linkedin.com/in/felipe-estival-b1231135a/" target="_blank" title="LinkedIn">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
             </div>
@@ -216,6 +240,8 @@
     <footer class="text-center text-white-50 py-4">
         <small>&copy; {% now "Y" %} Baixador de MP3</small>
     </footer>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
