@@ -7,9 +7,40 @@
 </head>
 <body>
     <header>
-        <h1></h1>
+        <h1>Baixador de MP3</h1>
     </header>
-    <main></main>
+
+    <main>
+
+        <section>
+            <div>
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <h2>Insira aqui sua URL</h2>
+                    <label for="url">Youtube URL:</label>
+                    <input type="text" id="url">
+
+                    <button type="submit">Baixar audio</button>
+                </form>
+            </div>
+        </section>
+
+        {% if audio_baixado %}
+            <section>
+                <div>
+                    <audio controls>
+                        <source src="/mediafiles/MeuMestre (online-audio-converter.com).mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+
+                    <a href="/mediafiles/MeuMestre (online-audio-converter.com).mp3" download=""><button>Download</button></a>
+                </div>
+            </section>
+        {% endif %}
+
+    </main>
+
     <footer></footer>
 
 </body>
