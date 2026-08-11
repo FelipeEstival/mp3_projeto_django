@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download MP3</title>
+</head>
+<body>
+    <header>
+        <h1>Baixador de MP3</h1>
+    </header>
+
+    <main>
+
+        <section>
+            <div>
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <h2>Insira aqui sua URL</h2>
+                    <label for="url">Youtube URL:</label>
+                    <input type="text" id="url" name="url_digitada" value={{url_digitada}}>
+
+                    <button type="submit">Baixar audio</button>
+                </form>
+            </div>
+        </section>
+
+        {% if audio_baixado %}
+            <section>
+                <div>
+                    <audio controls>
+                        <source src="/media/audiobaixado.m4a">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+
+                    <a href="/media/audiobaixado.m4a" download="audiobaixado.m4a"><button>Download</button></a>
+                </div>
+            </section>
+        {% endif %}
+
+        {% if messages %}
+        <section>
+            {% for message in messages %}
+            <div>
+                {{message}}
+            </div>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+    </main>
+
+    <footer></footer>
+
+</body>
+</html>
