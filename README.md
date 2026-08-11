@@ -1,9 +1,5 @@
 # Django MP3 Downloader
 
-<p align="center">
-  <b>Aplicação web robusta desenvolvida em Django para extração e conversão de áudio de vídeos do YouTube de maneira automatizada e intuitiva.</b>
-</p>
-
 Para executar este projeto em ambiente de desenvolvimento local
 * **Python** instalado
 * **Pip** instalado
