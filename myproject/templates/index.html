@@ -19,7 +19,7 @@
 
                     <h2>Insira aqui sua URL</h2>
                     <label for="url">Youtube URL:</label>
-                    <input type="text" id="url" value={{url_digitada}} name="url_digitada">
+                    <input type="text" id="url" name="url_digitada" value={{url_digitada}}>
 
                     <button type="submit">Baixar audio</button>
                 </form>
@@ -30,13 +30,23 @@
             <section>
                 <div>
                     <audio controls>
-                        <source src="/mediafiles/audiobaixado.mp3" type="audio/mpeg">
+                        <source src="/media/audiobaixado.m4a">
                         Seu navegador não suporta o elemento de áudio.
                     </audio>
 
-                    <a href="/mediafiles/audiobaixado.mp3" download=""><button>Download</button></a>
+                    <a href="/media/audiobaixado.m4a" download="audiobaixado.m4a"><button>Download</button></a>
                 </div>
             </section>
+        {% endif %}
+
+        {% if messages %}
+        <section>
+            {% for message in messages %}
+            <div>
+                {{message}}
+            </div>
+            {% endfor %}
+        </section>
         {% endif %}
 
     </main>
