@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import mimetypes
+import os
+import certifi
+
+os.environ["SSL_CERT_FILE"] = certifi.where()
 
 mimetypes.add_type("audio/mp4", ".m4a", True)
 

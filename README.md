@@ -3,6 +3,7 @@
 Para executar este projeto em ambiente de desenvolvimento local
 * **Python** instalado
 * **Pip** instalado
+
 As dependências estão no `requirements.txt`
 
 ```bash
